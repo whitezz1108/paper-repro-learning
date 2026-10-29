@@ -1,0 +1,29 @@
+<section class="cp-stage cp-gallery" data-page="explore" hidden>
+  <div class="cp-collection-head">
+    <div><p class="cp-eyebrow" id="cp-gallery-eyebrow">PAPER / EXPLORE</p><h1 id="cp-gallery-title">下一篇，值得深入。</h1><p id="cp-gallery-sub">沿着好奇心浏览，从一篇论文开始。</p></div>
+    <div class="cp-library-stats" id="cp-library-stats"></div>
+  </div>
+  <nav class="cp-collection-tabs" aria-label="论文集合">
+    <button data-filter="all" aria-pressed="true">全部论文 <span id="cp-count-all"></span></button>
+    <button data-filter="recorded" aria-pressed="false">有实验记录 <span id="cp-count-recorded"></span></button>
+    <button data-filter="unrecorded" aria-pressed="false">尚无实验 <span id="cp-count-unrecorded"></span></button>
+    <button data-filter="liked" aria-pressed="false">我的喜欢 <span id="cp-count-liked"></span></button>
+    <button data-filter="recent" aria-pressed="false">最近浏览 <span id="cp-count-recent"></span></button>
+  </nav>
+  <div class="cp-library-toolbar">
+    <div class="cp-search-field"><span aria-hidden="true">⌕</span><label class="cp-screenreader" for="cp-search-input">搜索论文、作者或关键词</label><input id="cp-search-input" type="search" placeholder="搜索论文、作者或关键词…" autocomplete="off"></div>
+    <button id="cp-toggle-filters" class="cp-smoke" aria-expanded="false" aria-controls="cp-advanced">筛选 <span id="cp-filter-count"></span></button>
+    <label class="cp-screenreader" for="cp-sort">论文排序</label><select id="cp-sort"><option value="curated">有记录优先</option><option value="newest">发表时间 ↓</option><option value="title">题名 A–Z</option></select>
+  </div>
+  <div id="cp-advanced" class="cp-advanced" hidden>
+    <label for="cp-category">研究领域<select id="cp-category" aria-label="研究领域"><option value="">全部领域</option></select></label>
+    <label for="cp-author">作者<select id="cp-author" aria-label="作者"><option value="">全部作者</option></select></label>
+    <label for="cp-group">课题组<select id="cp-group" aria-label="课题组"><option value="">全部来源</option></select></label>
+    <label for="cp-difficulty">原目录难度<select id="cp-difficulty" aria-label="原目录难度"><option value="">不限</option><option value="1">1 / 5</option><option value="2">2 / 5</option><option value="3">3 / 5</option><option value="4">4 / 5</option><option value="5">5 / 5</option><option value="unknown">未估计</option></select></label>
+  </div>
+  <div class="cp-list-context"><p id="cp-list-count" role="status" aria-live="polite"></p><button id="cp-clear-filters" hidden>清除筛选 ×</button></div>
+  <div id="cp-gallery-cards"></div>
+  <div class="cp-empty cp-library-empty" id="cp-gallery-empty" hidden><span aria-hidden="true">◎</span><h2 id="cp-empty-title">没有找到匹配的论文</h2><p id="cp-empty-copy"></p><button class="cp-smoke" id="cp-empty-action">重置筛选</button></div>
+  <div class="cp-load-more"><p id="cp-load-status"></p><button class="cp-smoke" id="cp-load-more">继续浏览 ↓</button></div>
+  <p class="cp-data-caption">目录快照 · <span id="cp-snapshot"></span>。收录论文不等于已完成分析；“有实验记录”对应原 Repro 保存的历史运行。</p>
+</section>

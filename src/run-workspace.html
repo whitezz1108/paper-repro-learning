@@ -1,0 +1,18 @@
+<section class="cp-stage" data-page="history" hidden>
+  <div class="cp-collection-head"><div><p class="cp-eyebrow">THE EXPERIMENT ARCHIVE</p><h1>每一次尝试，都有来路。</h1><p>跨论文浏览运行记录，回到过程，核对结论。</p></div><span class="cp-chip">历史快照</span></div>
+  <nav class="cp-collection-tabs" aria-label="个人工作区"><button data-route="library">喜欢的论文</button><button data-route="history" aria-pressed="true">实验历史</button><button id="cp-drafts-open">实验草稿</button></nav>
+  <div class="cp-library-toolbar"><label class="cp-search-field"><span>⌕</span><input id="cp-history-search" type="search" placeholder="搜索论文、运行 ID 或智能体" aria-label="搜索实验历史"></label><select id="cp-history-verdict" aria-label="筛选实验结论"><option value="">全部结论</option><option value="reproduced">已复现</option><option value="partially_reproduced">部分复现</option><option value="not_reproduced">未复现</option><option value="could_not_run">无法运行</option><option value="pending">尚无结论</option></select><select id="cp-history-kind" aria-label="筛选运行来源"><option value="">全部来源</option><option value="recorded">录制运行</option><option value="agent">用户智能体</option></select></div>
+  <p id="cp-history-note" class="cp-data-caption"></p><div id="cp-history-list"></div>
+</section>
+<div class="cp-overlay cp-run-overlay" id="cp-run-overlay" hidden>
+ <section class="cp-dialog cp-run-dialog" role="dialog" aria-modal="true" aria-labelledby="cp-run-title">
+  <header class="cp-run-head"><div><p class="cp-eyebrow" id="cp-run-source">RECORDED EXPERIMENT</p><h2 id="cp-run-title"></h2><p id="cp-run-caption"></p></div><div class="cp-run-tools"><button class="cp-smoke" id="cp-run-link">复制此处链接</button><button class="cp-smoke" id="cp-run-wide" aria-pressed="false">展开为整页</button><button class="cp-smoke" data-close-modal="run" aria-label="关闭实验过程">×</button></div></header>
+  <nav id="cp-run-stages" class="cp-run-stages" aria-label="实验阶段"></nav>
+  <div class="cp-run-workspace">
+   <section class="cp-event-pane" aria-label="执行记录"><div class="cp-pane-toolbar"><strong>执行记录</strong><select id="cp-event-filter" aria-label="筛选运行事件"><option value="key">关键事件</option><option value="all">全部事件（含已记录推理）</option><option value="errors">错误与修复</option></select></div><div id="cp-event-list" tabindex="0" aria-label="运行事件列表"></div></section>
+   <section class="cp-evidence-pane" aria-label="步骤证据"><nav class="cp-evidence-tabs" aria-label="证据类型"><button data-evidence="detail" aria-pressed="true">事件详情</button><button data-evidence="paper" aria-pressed="false">论文原文</button><button data-evidence="files" aria-pressed="false">代码与文件</button><button data-evidence="contract" aria-pressed="false">当次计划</button></nav><div id="cp-evidence-body"></div></section>
+  </div>
+  <input id="cp-run-link-fallback" readonly hidden aria-label="回放位置链接">
+  <footer class="cp-run-controls"><div><button class="cp-crystal" id="cp-run-play">播放回放</button><select id="cp-run-speed" aria-label="回放速度"><option value="1">1×</option><option value="20" selected>20×</option><option value="100">100×</option></select><button class="cp-smoke" id="cp-run-end">跳到结尾</button><span id="cp-run-clock" aria-live="off"></span></div><button class="cp-smoke" id="cp-run-results">查看本次结果 →</button></footer>
+ </section>
+</div>

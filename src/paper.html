@@ -1,0 +1,36 @@
+<div data-page="paper" hidden>
+  <header class="cp-workhead">
+    <div class="cp-detail-breadcrumb"><button id="cp-back-list">← 返回论文库</button><span id="cp-browse-position"></span><div><button id="cp-prev-paper" aria-label="上一篇论文">←</button><button id="cp-next-paper" aria-label="下一篇论文">→</button></div></div>
+    <div class="cp-detail-heading">
+      <div><p class="cp-eyebrow">THE PAPER COLLECTION</p><h1 id="cp-paper-title"></h1><p id="cp-paper-subtitle"></p><div class="cp-detail-meta" id="cp-paper-meta"></div></div>
+      <button class="cp-title-video" id="cp-title-video" data-video-open aria-haspopup="dialog" aria-controls="cp-video-overlay" aria-label="查看论文视频（待生成）">
+        <span class="cp-title-video-poster" id="cp-title-video-poster" aria-hidden="true">
+          <span class="cp-title-video-topic" id="cp-title-video-topic"></span>
+          <span class="cp-title-video-status">待生成</span>
+          <span class="cp-title-video-play"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6.5 18 12l-9 5.5V6.5Z" fill="currentColor"/></svg></span>
+          <span class="cp-title-video-caption">无旁白 · 字幕 · 音乐</span>
+        </span>
+        <span class="cp-title-video-footer"><span>论文视频</span><span>打开播放器 ↗</span></span>
+      </button>
+      <div class="cp-detail-actions"><button class="cp-smoke" id="cp-paper-like" aria-pressed="false">♡ 喜欢</button><button id="cp-share-paper">复制论文链接 ↗</button></div>
+    </div>
+    <nav class="cp-tabs" aria-label="论文内容"><button data-tab="overview" aria-pressed="true">总览</button><button data-tab="analysis" aria-pressed="false">论文解读</button><button data-experiment aria-pressed="false">实验</button></nav>
+  </header>
+  <section class="cp-detail-body" data-content="overview">
+    <article class="cp-reading-overview" id="cp-paper-information" tabindex="-1">
+      <p class="cp-eyebrow">ABOUT THE PAPER</p><h2>从论文开始</h2>
+      <p class="cp-data-caption" id="cp-summary-note"></p><div id="cp-source-abstract" class="cp-abstract"></div>
+      <div class="cp-actions"><button class="cp-crystal" id="cp-open-original">阅读论文原文 ↗</button><button class="cp-smoke" id="cp-handoff-open">带着论文去 AI 追问 ↗</button></div>
+      <details class="cp-source-details"><summary>作者、来源与更多信息</summary><dl id="cp-source-metadata"></dl></details>
+      <div class="cp-reading-next"><div><h3>继续理解这篇论文</h3><p>图文解读尚未收录，可以先阅读原文或带着上下文继续追问。</p></div><button class="cp-text-button" data-tab="analysis">论文解读 →</button></div>
+      <div class="cp-experiment-note"><span id="cp-experiment-note"></span><button class="cp-text-button" data-experiment>进入实验 →</button></div>
+    </article>
+    <section class="cp-related"><div class="cp-section-head"><div><p class="cp-eyebrow">KEEP EXPLORING</p><h2>沿着这个方向，继续。</h2></div><button class="cp-smoke" id="cp-browse-topic">浏览同领域 →</button></div><div class="cp-cards" id="cp-related-cards"></div></section>
+  </section>
+  <section class="cp-detail-body" data-content="analysis" hidden><div class="cp-pending"><span class="cp-pending-icon" aria-hidden="true">≋</span><p class="cp-eyebrow">PAPER ANALYSIS</p><h2>这篇论文，还待展开。</h2><p>完整分析将串起问题、方法、图表与实验，并连接到原文依据。</p><div class="cp-pending-outline"><span>01 问题与贡献</span><span>02 方法与图表</span><span>03 结论与限制</span></div><p class="cp-data-caption">分析服务尚未接入当前设计站。</p><div class="cp-actions"><button class="cp-crystal" data-paper-info>返回总览与原文 →</button><button class="cp-smoke" data-handoff>带着论文去 AI 追问 ↗</button></div></div></section>
+  <div class="cp-experiment-nav" id="cp-experiment-nav" hidden><div class="cp-experiment-context"><p id="cp-experiment-context"></p><button class="cp-text-button" data-tab="plan">＋ 准备新实验</button></div><nav class="cp-tabs cp-subtabs" aria-label="实验内容"><button data-tab="plan">实验计划</button><button data-tab="process">实验过程 <small id="cp-process-count">0</small></button><button data-tab="results">实验结果 <small id="cp-runs-count">0</small></button></nav></div>
+  <section class="cp-detail-body" data-content="plan" hidden><p class="cp-eyebrow">LEARN BY TESTING</p><h2 class="cp-section-title">我的新实验计划</h2><p class="cp-data-caption">这是你的独立草稿，不会修改已有实验记录。历史实验采用的计划可在“实验过程”对应记录中查看。</p><div class="cp-steps"><div class="cp-well"><h3>我想检验什么？</h3><label for="cp-target">想复现的表格、指标或问题</label><textarea id="cp-target" maxlength="500" placeholder="例如：复现 Table 3 的 AUC，比较采样大小对结果的影响。"></textarea><label for="cp-plan-data">数据集／版本</label><input id="cp-plan-data" type="text" maxlength="200" placeholder="尚未确定可留空，由 AI 先核对"><label for="cp-plan-repo">代码仓库（可选）</label><input id="cp-plan-repo" type="text" maxlength="300" placeholder="https://github.com/…"><label for="cp-plan-budget">执行时间上限</label><select id="cp-plan-budget"><option value="30">30 分钟</option><option value="60" selected>60 分钟</option><option value="120">120 分钟</option><option value="240">240 分钟</option></select><label for="cp-goal">学习目标</label><select id="cp-goal"><option>理解核心机制</option><option>比较不同条件</option><option>尝试复现一个结果</option></select><label for="cp-scope">实验范围</label><select id="cp-scope"><option>小规模验证</option><option>原论文条件（需资源检查）</option></select></div><div class="cp-well"><h3>交接前的方案</h3><dl><dt>论文</dt><dd id="cp-plan-paper"></dd><dt>目标</dt><dd id="cp-plan-goal">理解核心机制</dd><dt>范围</dt><dd id="cp-plan-scope">小规模验证</dd><dt>待补齐</dt><dd>数据版本、评价指标、资源预算与预期产物</dd><dt>执行方式</dt><dd>复制 Prompt，交给自己的 AI</dd></dl><p class="cp-data-caption">最近 6 篇论文的计划草稿保存在当前浏览器，每篇最多 500 字。</p></div></div><section class="cp-result-section"><h3>开始前，先看看条件</h3><div id="cp-plan-resources"></div></section><button class="cp-crystal" id="cp-plan-handoff">准备交给我的 AI ↗</button><p class="cp-data-caption">当前只整理实验计划，不会启动计算。MCP 暂时保留入口。</p></section>
+  <section class="cp-detail-body" data-content="process" hidden><div class="cp-section-head"><div><p class="cp-eyebrow">FOLLOW THE EXPERIMENT</p><h2>已有实验记录</h2></div><button class="cp-smoke" data-route="history">所有实验历史 ↗</button></div><p class="cp-data-caption">录制回放与用户智能体历史快照；查看记录不会启动实验。</p><div id="cp-process-list"></div></section>
+  <section class="cp-detail-body" data-content="results" hidden><div class="cp-section-head"><div><p class="cp-eyebrow">RESULTS & EVIDENCE</p><h2>本次实验的结果</h2></div><button class="cp-smoke" data-tab="plan">规划一次新实验 ↗</button></div><p class="cp-data-caption">来自原 Repro 保存的运行与核验材料。切换运行时，过程与结果对应同一条记录；本站未重新执行实验。</p><div id="cp-results-list"></div></section>
+  <div class="cp-detail-end"><button id="cp-end-back">← 回到刚才的论文库</button><button id="cp-end-next">继续看下一篇 →</button></div>
+</div>
