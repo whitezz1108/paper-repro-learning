@@ -16,7 +16,7 @@ code=read('app.js').replace('/* RUN_WORKSPACE */',read('run-workspace.js'))
 app=base+'<script type="application/json" id="paper-data">'+payload+'</script>'+json_script('runs.json','run-data')+json_script('run-blobs.json','run-blobs')+'<script>'+pdf_lib+'\n'+pdf_init+'</script>\n<script>\n'+code+'\n</script>\n</div>'
 frame=read('frame.html').replace('{{APP}}',app)
 outer=read('wrapper.html').replace('{{FRAME}}',html.escape(frame,quote=True))
-outer=outer.replace('</head>','<style>html,body{height:100%;overflow:hidden;background:#141413}body{padding:0}#codex-visualization{width:100%;max-width:none;height:100dvh!important;margin:0}</style>\n</head>',1)
+outer=outer.replace('</head>','<style>html,body{height:100%;overflow:hidden;background:#f6f5f1}body{padding:0}#codex-visualization{width:100%;max-width:none;height:100dvh!important;margin:0}</style>\n</head>',1)
 outer=outer.replace('<title>paper-soft-light.html</title>','<title>paper. — 论文探索与实验</title>',1)
 outer=outer.replace('</body>','<script>\n'+read('host.js')+'\n</script>\n</body>')
 assert 'sandbox="allow-scripts"' in outer
