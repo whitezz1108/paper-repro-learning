@@ -3525,7 +3525,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc=URL.createObjectURL(new Blob([&quot;/**\n
 (() => {
   const frame=document.getElementById('codex-visualization');
   const valid=hash=>typeof hash==='string'&&hash.length<2400&&/^#\/(?:$|explore(?:\?[^\r\n<>]*)?|history|upload|paper\/[a-zA-Z0-9.%_-]+(?:\/(?:overview|source|analysis|video|plan|process|results))?(?:\?[^\r\n<>]*)?)$/.test(hash);
-  const landing=document.createElement('iframe');landing.id='paper-landing';landing.title='Paper Repro 首页';landing.setAttribute('sandbox','allow-scripts');landing.src='landing/index.html';landing.style.cssText='position:fixed;inset:0;width:100%;height:100dvh;max-width:none;margin:0;border:0;background:#f7f5ef';document.body.append(landing);
+  const landing=document.createElement('iframe');landing.id='paper-landing';landing.title='Paper Repro 首页';landing.setAttribute('sandbox','allow-scripts');landing.src='landing/index.html?v=light-1';landing.style.cssText='position:fixed;inset:0;width:100%;height:100dvh;max-width:none;margin:0;border:0;background:#f7f5ef';document.body.append(landing);
   const syncSurface=()=>{const home=!location.hash||['#/', '#/landing'].includes(location.hash);landing.hidden=!home;frame.hidden=home;landing.style.display=home?'block':'none';frame.style.display=home?'none':'block';landing.contentWindow?.postMessage({type:'landing-visibility',visible:home},'*');};
   addEventListener('message',event=>{if(event.source!==landing.contentWindow||event.data?.type!=='landing-navigate'||!valid(event.data.hash))return;location.hash=event.data.hash;syncSurface();});
   syncSurface();addEventListener('hashchange',syncSurface);
